@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- Imports -->
+		<link
+			rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+			integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+			crossorigin="anonymous"
+		/>
+
+		{% if title %}
+		<title>{{ title }} - Finance API</title>
+		{% else %}
+		<title>Finance API</title>
+		{% endif %}
+	</head>
+	<body>
+		<!-- Navigation -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="#">Finance API - Documentation</a>
+			<button
+				class="navbar-toggler"
+				type="button"
+				data-toggle="collapse"
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent"
+				aria-expanded="false"
+				aria-label="Toggle navigation"
+			>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="#">GET</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">POST</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">PUT</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">DELETE</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<!-- Main Content -->
+		<div class="container-fluid">
+			<div class="row mt-4 justify-content-left">
+				<div class="col mx-3">
+					<h3>Admin Section</h3>
+					<p>Requires JWT Token auth as admin</p>
+				</div>
+			</div>
+			<div class="row mt-4 justify-content-left">
+				<div class="col mx-3">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">GET /api/users</h5>
+							<h6 class="card-subtitle mb-2 text-muted">Return JSON with users.</h6>
+							<p>Authorization : Bearer Token auth as admin</p>
+							<a href="https://flask-finance-api.herokuapp.com/api/users" class="card-link">https://flask-finance-api.herokuapp.com/api/users</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row mt-4 justify-content-left">
+				<div class="col mx-3">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">GET /api/user/id</h5>
+							<h6 class="card-subtitle mb-2 text-muted">Return JSON with users.</h6>
+							<p>Authorization : Bearer Token auth as admin</p>
+							<p>
+								<a href="https://flask-finance-api.herokuapp.com/api/user/1" class="card-link"
+									>https://flask-finance-api.herokuapp.com/api/user/1</a
+								>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row mt-4 justify-content-left">
+				<div class="col mx-3">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">PUT /api/user/id</h5>
+							<h6 class="card-subtitle mb-2 text-muted">Update a user from JSON</h6>
+							<p class="card-text mt-3">Content-Type: application/json</p>
+							<p>Authorization : Bearer Token auth as admin</p>
+							<p class="card-text">
+								{"last_name": "last_name", "first_name": "first_name","password": "password", "address": "address", "city": "city", "country":
+								"country", "postcode": "postcode", "about_me": "about_me", "profile_picture": "profile_picture", "position": "position" ,
+								"education": "education", "birthdate": "birthdate"}
+							</p>
+							<a href="https://flask-finance-api.herokuapp.com/api/user/1" class="card-link"
+								>https://flask-finance-api.herokuapp.com/api/user/1</a
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row mt-4 justify-content-left">
+				<div class="col mx-3">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">DELETE /api/user/id</h5>
+							<h6 class="card-subtitle mb-2 text-muted">Delete a user from ID</h6>
+							<p>Authorization : Bearer Token auth as admin</p>
+							<a href="https://flask-finance-api.herokuapp.com/api/user/1" class="card-link"
+								>https://flask-finance-api.herokuapp.com/api/user/1</a
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row mt-4 justify-content-left">
+				<div class="col mx-3">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">POST</h5>
+							<h6 class="card-subtitle mb-2 text-muted">Create a user from JSON</h6>
+							<p>Authorization : Bearer Token auth as admin</p>
+							<p class="card-text mt-3">Content-Type: application/json</p>
+							<p class="card-text">
+								{"email": "email", "last_name": "last_name", "first_name": "first_name", "username": "username", "password": "password",
+								"address": "address", "city": "city", "country": "country", "postcode": "postcode", "about_me": "about_me", "profile_picture":
+								"profile_picture", "position": "position" , "education": "education", "birthdate": "birthdate"}
+							</p>
+							<a href="https://flask-finance-api.herokuapp.com/api/users" class="card-link">https://flask-finance-api.herokuapp.com/api/users</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row mt-4 justify-content-left">
+				<div class="col mx-3">
+					<h3>User Section</h3>
+					<p>Requires JWT Token auth as admin</p>
+				</div>
+			</div>
+			<div class="row mt-4 justify-content-left">
+				<div class="col mx-3">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">POST /api/login</h5>
+							<h6 class="card-subtitle mb-2 text-muted">Login User</h6>
+							<p class="card-text">{"username": "username", "password": "password"}</p>
+							<a href="https://flask-finance-api.herokuapp.com/api/login" class="card-link">https://flask-finance-api.herokuapp.com/api/login</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row mt-4 justify-content-left">
+				<div class="col mx-3">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">POST /api/reset</h5>
+							<h6 class="card-subtitle mb-2 text-muted">Send Email to Reset Password</h6>
+							<p class="card-text">{"email": "email"}</p>
+							<a href="https://flask-finance-api.herokuapp.com/api/reset" class="card-link">https://flask-finance-api.herokuapp.com/api/reset</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row mt-4 justify-content-left">
+				<div class="col mx-3">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">POST /api/reset_password</h5>
+							<h6 class="card-subtitle mb-2 text-muted">Reset Password</h6>
+							<p class="card-text">{"password": "password", "token": "token"}</p>
+							<a href="https://flask-finance-api.herokuapp.com/api/reset_password" class="card-link"
+								>https://flask-finance-api.herokuapp.com/api/reset_password</a
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row mt-4 justify-content-left">
+				<div class="col mx-3">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">POST /api/register</h5>
+							<h6 class="card-subtitle mb-2 text-muted">Register User and send Email to set Password</h6>
+							<p class="card-text">{"email": "email", "username": "username", "first_name": "first_name", "last_name": "last_name"}</p>
+							<a href="https://flask-finance-api.herokuapp.com/api/register" class="card-link"
+								>https://flask-finance-api.herokuapp.com/api/register</a
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row mt-4 justify-content-left">
+				<div class="col mx-3">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">GET /api/user/setting</h5>
+							<h6 class="card-subtitle mb-2 text-muted">Return User Settings</h6>
+							<p>Authorization : Bearer Token auth as user</p>
+							<a href="https://flask-finance-api.herokuapp.com/api/user/setting" class="card-link"
+								>https://flask-finance-api.herokuapp.com/api/user/setting</a
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row mt-4 justify-content-left">
+				<div class="col mx-3">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">PUT /api/user/setting</h5>
+							<h6 class="card-subtitle mb-2 text-muted">Update User Settings</h6>
+							<p>Authorization : Bearer Token auth as user</p>
+							<p class="card-text">{"color": "color", "default_currency": "default_currency"}</p>
+							<a href="https://flask-finance-api.herokuapp.com/api/user/setting" class="card-link"
+								>https://flask-finance-api.herokuapp.com/api/user/setting</a
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Bootstrap core JavaScript -->
+		<script
+			src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+			integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+			integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+			integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+			crossorigin="anonymous"
+		></script>
+	</body>
+</html>
