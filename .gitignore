@@ -1,6 +1,3 @@
 config.json
 *.db
 venv/
-.vscode
-__pycache__
-.pylintrc
