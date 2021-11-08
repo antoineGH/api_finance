@@ -235,6 +235,7 @@ def login(username, password):
         'refresh_token': create_refresh_token(identity=username),
         'username': username,
     }
+    print(ret)
     return jsonify(ret), 201
 
 def post(email, username, password, first_name, last_name, birthdate, position, education, about_me, address, city, postcode, country, profile_picture):
@@ -542,6 +543,16 @@ def user_setting():
             return jsonify({"message": "Missing JSON in request"}), 400
         content = request.get_json(force=True)
         return update_setting(user_id, content)
+
+@app.route('/api/exchange/latest', methods=['GET'])
+@jwt_required
+def latest():
+    return jsonify({"message": 'Latest'}), 200
+
+@app.route('/api/exchange/history', methods=['GET'])
+@jwt_required
+def history():
+    return jsonify({"message": 'History'}), 200
 
 if __name__ == '__main__':
     app.run(debug=True)
