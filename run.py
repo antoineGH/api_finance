@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, abort, make_response, request, render_template, url_for, redirect
 from flask_mail import Message, Mail
 import os
-import json
+import json, urllib.request
 import datetime
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from flask_bcrypt import Bcrypt
@@ -546,12 +546,23 @@ def user_setting():
 @app.route('/api/exchange/latest', methods=['GET'])
 @jwt_required
 def latest():
-    return jsonify({"message": 'Latest'}), 200
+    exchange_api_key = os.environ.get('EXCHANGE_RATE_API_KEY')
+    url = "http://api.exchangeratesapi.io/v1/latest?access_key={}".format(exchange_api_key)
+    response = urllib.request.urlopen(url)
+    data = response.read()
+    dict = json.loads(data)
+    return jsonify(dict), 200
 
 @app.route('/api/exchange/history', methods=['GET'])
 @jwt_required
 def history():
-    return jsonify({"message": 'History'}), 200
+    exchange_api_key = os.environ.get('EXCHANGE_RATE_API_KEY')
+    exchange_api_key = os.environ.get('EXCHANGE_RATE_API_KEY')
+    url = "http://api.exchangeratesapi.io/v1/{}?access_key={}".format('2013-03-16', exchange_api_key)
+    response = urllib.request.urlopen(url)
+    data = response.read()
+    dict = json.loads(data)
+    return jsonify(dict), 200
 
 if __name__ == '__main__':
     app.run(debug=True)
