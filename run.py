@@ -235,7 +235,6 @@ def login(username, password):
         'refresh_token': create_refresh_token(identity=username),
         'username': username,
     }
-    print(ret)
     return jsonify(ret), 201
 
 def post(email, username, password, first_name, last_name, birthdate, position, education, about_me, address, city, postcode, country, profile_picture):
