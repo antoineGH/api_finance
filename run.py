@@ -548,17 +548,21 @@ def user_setting():
 def latest():
     exchange_api_key = os.environ.get('EXCHANGE_RATE_API_KEY')
     url = "http://api.exchangeratesapi.io/v1/latest?access_key={}".format(exchange_api_key)
+    print(url)
     response = urllib.request.urlopen(url)
     data = response.read()
     dict = json.loads(data)
+    print(dict)
     return jsonify(dict), 200
 
-@app.route('/api/exchange/history', methods=['GET'])
+@app.route('/api/exchange/history/<date>', methods=['GET'])
 @jwt_required
-def history():
+def history(date):
+    if not date: 
+        abort(404)
     exchange_api_key = os.environ.get('EXCHANGE_RATE_API_KEY')
     exchange_api_key = os.environ.get('EXCHANGE_RATE_API_KEY')
-    url = "http://api.exchangeratesapi.io/v1/{}?access_key={}".format('2013-03-16', exchange_api_key)
+    url = "http://api.exchangeratesapi.io/v1/{}?access_key={}".format(date, exchange_api_key)
     response = urllib.request.urlopen(url)
     data = response.read()
     dict = json.loads(data)
