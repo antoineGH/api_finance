@@ -63,7 +63,7 @@ User Endpoints:
 
 Database schema:
 
-![DB Screenshot](https://templars.guru/app/github/finance_api/1.png)
+![DB Screenshot](https://github.com/antoineratat/github_docs/blob/main/finance_api/1.png?raw=true)
 
 ## Technologies<a name="technologies"></a>
 
